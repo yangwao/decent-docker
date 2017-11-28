@@ -1,7 +1,8 @@
 version: '3'
 services:
-  decentcont:
-    image: furion/decent
+  decentstageimage:
+    image: yangwao/decent-docker:manual3
+    network_mode: "host"
     logging:
       driver: "json-file"
       options:
@@ -9,3 +10,6 @@ services:
         max-file: "2"
     volumes:
       - ./data:/root/.decent/data
+    ports:
+      - "127.0.0.1:8090:8090"
+      - "127.0.0.1:8093:8093"
