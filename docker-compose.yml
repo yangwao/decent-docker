@@ -1,0 +1,11 @@
+version: '3'
+services:
+  decentcont:
+    image: furion/decent
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100M"
+        max-file: "2"
+    volumes:
+      - ./data:/root/.decent/data
