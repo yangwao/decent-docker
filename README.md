@@ -2,10 +2,10 @@
 docker image with decend 1.1.0
 
 ## stage
-docker pull yangwao/decent-docker:manual3
+docker pull yangwao/decent-docker:manual6
 
 ## mainnet
-docker pull yangwao/decent-docker:production
+docker pull yangwao/decent-docker:production-manual3
 
 ### credits
 credits goes to [https://github.com/Netherdrake/DECENT-docker](https://github.com/Netherdrake/DECENT-docker)
