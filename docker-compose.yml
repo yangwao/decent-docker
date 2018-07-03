@@ -1,7 +1,7 @@
-version: '3'
+version: '2'
 services:
   decentstageimage:
-    image: yangwao/decent-docker:manual3
+    image: yangwao/decent-docker:production-manual3
     network_mode: "host"
     logging:
       driver: "json-file"
