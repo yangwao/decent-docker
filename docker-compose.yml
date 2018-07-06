@@ -1,6 +1,6 @@
 version: '2'
 services:
-  decentstageimage:
+  mainnet:
     image: yangwao/decent-docker:production-manual4
     network_mode: "host"
     logging:
@@ -10,6 +10,20 @@ services:
         max-file: "2"
     volumes:
       - ./data:/root/.decent/data
+    ports:
+      - "127.0.0.1:8090:8090"
+      - "127.0.0.1:8093:8093"
+
+  publictestnet:
+    image: yangwao/decent-docker:publictestnet-manual1
+    network_mode: "host"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100M"
+        max-file: "2"
+    volumes:
+      - ./data_publictestnet:/root/.decent/data
     ports:
       - "127.0.0.1:8090:8090"
       - "127.0.0.1:8093:8093"
