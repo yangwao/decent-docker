@@ -10,9 +10,9 @@ services:
         max-file: "2"
     volumes:
       - ./data:/root/.decent/data
-    ports:
-      - "127.0.0.1:8090:8090"
-      - "127.0.0.1:8093:8093"
+    #ports:
+    #  - "127.0.0.1:8090:8090"
+    #  - "127.0.0.1:8093:8093"
 
   publictestnet:
     image: yangwao/decent-docker:publictestnet-manual1
@@ -24,6 +24,6 @@ services:
         max-file: "2"
     volumes:
       - ./data_publictestnet:/root/.decent/data
-    ports:
-      - "127.0.0.1:8090:8090"
-      - "127.0.0.1:8093:8093"
+    #ports:
+    #  - "127.0.0.1:8090:8090"
+    #  - "127.0.0.1:8093:8093"
