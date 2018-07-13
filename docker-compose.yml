@@ -25,5 +25,5 @@ services:
     volumes:
       - ./data_publictestnet:/root/testnet_data
     ports:
-     - "127.0.0.1:8090:8090"
-     - "127.0.0.1:8093:8093"
+     - "127.0.0.1:18090:8090"
+     - "127.0.0.1:18093:8093"
