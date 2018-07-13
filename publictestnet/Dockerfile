@@ -48,7 +48,7 @@ RUN cd / && \
 # EXPOSE 8090
 
 RUN cp /decent-bin/artifacts/prefix/bin/* /decent-bin
-VOLUME /root/.decent
-# COPY genesis-public-testnet.json /root/.decent/data/
+VOLUME /root/testnet_data
+COPY genesis-public-testnet.json /root/
 WORKDIR /decent-bin
-ENTRYPOINT ["sh", "-c", "/decent-bin/decentd", "--data-dir=/root/.decent/data", "--genesis-json=/root/.decent/genesis-public-testnet.json", "--seed-node=testnet.dcore.io:40000" ]
+ENTRYPOINT ["/decent-bin/decentd", "--data-dir=/root/testnet_data", "--genesis-json=/root/genesis-public-testnet.json", "--seed-node=testnet.dcore.io:40000" ]
