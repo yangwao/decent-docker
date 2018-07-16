@@ -2,7 +2,6 @@ version: '3.6'
 services:
   mainnet:
     image: yangwao/decent-docker:production-manual4
-    network_mode: "host"
     logging:
       driver: "json-file"
       options:
@@ -18,7 +17,6 @@ services:
 
   publictestnet:
     image: yangwao/decent-docker:publictestnet-manual-1.2.2
-    #network_mode: "host"
     logging:
       driver: "json-file"
       options:
@@ -31,3 +29,18 @@ services:
      - "127.0.0.1:18091:8091"
      - "127.0.0.1:18092:8092"
      - "127.0.0.1:18093:8093"
+
+  customnet:
+    image: yangwao/decent-docker:publictestnet-manual-1.2.2
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100M"
+        max-file: "2"
+    volumes:
+      - ./data_customnet:/root/testnet_data
+    ports:
+     - "127.0.0.1:28090:8090"
+     - "127.0.0.1:28091:8091"
+     - "127.0.0.1:28092:8092"
+     - "127.0.0.1:28093:8093"
