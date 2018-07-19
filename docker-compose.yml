@@ -1,6 +1,7 @@
 version: '3.6'
 services:
   mainnet:
+    container_name: dcore-mainnet
     image: yangwao/decent-docker:mainnet-manual-1.2.2
     logging:
       driver: "json-file"
@@ -15,6 +16,7 @@ services:
      - "127.0.0.1:8093:8093"
 
   publictestnet:
+    container_name: dcore-publictestnet
     image: yangwao/decent-docker:publictestnet-manual-1.2.2
     logging:
       driver: "json-file"
@@ -43,6 +45,7 @@ services:
      - "127.0.0.1:28093:8093"
 
   cliwallet:
+    container_name: dcore-cliwallet
     image: yangwao/decent-docker:cliwallet-manual-1.2.2
     logging:
       driver: "json-file"
@@ -54,4 +57,4 @@ services:
     ports:
      - "127.0.0.1:38091:8091"
      - "127.0.0.1:38093:8093"
-    command: ["/decent-bin/cli_wallet", "--server-rpc-endpoint=ws://172.18.0.4:8090", "--rpc-endpoint=0.0.0.0:8091", "--rpc-http-endpoint=0.0.0.0:8093", "--daemon"]
+    command: ["/decent-bin/cli_wallet", "--server-rpc-endpoint=ws://dcore-publictestnet:8090", "--rpc-endpoint=0.0.0.0:8091", "--rpc-http-endpoint=0.0.0.0:8093", "--daemon"]

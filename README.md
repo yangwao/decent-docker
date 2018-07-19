@@ -28,5 +28,8 @@
 #### connect to other daemon
 `./cli_wallet --server-rpc-endpoint=ws://decent-docker_mainnet_1:8090`
 
+### dcore documentation
+https://docs.decent.ch/
+
 ### credits
 credits goes to [https://github.com/Netherdrake/DECENT-docker](https://github.com/Netherdrake/DECENT-docker)
