@@ -1,7 +1,7 @@
 version: '3.6'
 services:
   mainnet:
-    image: yangwao/decent-docker:production-manual4
+    image: yangwao/decent-docker:mainnet-manual-1.2.2
     logging:
       driver: "json-file"
       options:
@@ -43,7 +43,7 @@ services:
      - "127.0.0.1:28093:8093"
 
   cliwallet:
-    image: cliwallet7
+    image: yangwao/decent-docker:cliwallet-manual-1.2.2
     logging:
       driver: "json-file"
       options:
