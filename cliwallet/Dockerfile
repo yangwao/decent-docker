@@ -42,12 +42,7 @@ RUN cd / && \
     cmake --build . --target all -- -j -l 3.0 && \
     cmake --build . --target install
 
-# P2P (seed) port
-# EXPOSE 2001
-# API Port
-# EXPOSE 8090
-
 RUN cp /decent-bin/artifacts/prefix/bin/* /decent-bin
 VOLUME /root/testnet_data
 WORKDIR /decent-bin
-ENTRYPOINT ["/cli_wallet", "-H", "-r", "-t" ]
+ENTRYPOINT ["/cli_wallet"]

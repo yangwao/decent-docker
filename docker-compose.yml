@@ -12,7 +12,6 @@ services:
     ports:
      - "127.0.0.1:8090:8090"
      - "127.0.0.1:8091:8091"
-     - "127.0.0.1:8092:8092"
      - "127.0.0.1:8093:8093"
 
   publictestnet:
@@ -27,7 +26,6 @@ services:
     ports:
      - "127.0.0.1:18090:8090"
      - "127.0.0.1:18091:8091"
-     - "127.0.0.1:18092:8092"
      - "127.0.0.1:18093:8093"
 
   customnet:
@@ -42,5 +40,18 @@ services:
     ports:
      - "127.0.0.1:28090:8090"
      - "127.0.0.1:28091:8091"
-     - "127.0.0.1:28092:8092"
      - "127.0.0.1:28093:8093"
+
+  cliwallet:
+    image: cliwallet7
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100M"
+        max-file: "2"
+    volumes:
+      - ./data_cliwallet:/root/testnet_data
+    ports:
+     - "127.0.0.1:38091:8091"
+     - "127.0.0.1:38093:8093"
+    command: ["/decent-bin/cli_wallet", "--server-rpc-endpoint=ws://172.18.0.4:8090", "--rpc-endpoint=0.0.0.0:8091", "--rpc-http-endpoint=0.0.0.0:8093", "--daemon"]

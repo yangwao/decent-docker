@@ -12,5 +12,21 @@
 
 `docker-compose up mainnet`
 
+### cli_wallet
+
+`docker exec -it decent-docker_mainnet_1 bash`
+
+#### wallet websocket rpc
+`./cli_wallet --rpc-endpoint=0.0.0.0:8091`
+
+#### wallet http rpc
+`./cli_wallet --rpc-http-endpoint=0.0.0.0:8093`
+
+#### http & websocket rpc
+`./cli_wallet --rpc-endpoint=0.0.0.0:8091 --rpc-http-endpoint=0.0.0.0:8093`
+
+#### connect to other daemon
+`./cli_wallet --server-rpc-endpoint=ws://decent-docker_mainnet_1:8090`
+
 ### credits
 credits goes to [https://github.com/Netherdrake/DECENT-docker](https://github.com/Netherdrake/DECENT-docker)
