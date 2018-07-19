@@ -51,4 +51,4 @@ RUN cp /decent-bin/artifacts/prefix/bin/* /decent-bin
 VOLUME /root/testnet_data
 COPY genesis-public-testnet.json /root/
 WORKDIR /decent-bin
-ENTRYPOINT ["/decent-bin/decentd", "--data-dir=/root/testnet_data", "--genesis-json=/root/genesis-public-testnet.json", "--seed-node=testnet.dcore.io:40000" ]
+ENTRYPOINT ["/decent-bin/decentd", "--rpc-endpoint=0.0.0.0:8090", "--data-dir=/root/testnet_data", "--genesis-json=/root/genesis-public-testnet.json", "--seed-node=testnet.dcore.io:40000" ]

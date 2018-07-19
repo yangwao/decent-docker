@@ -50,4 +50,4 @@ RUN cd / && \
 RUN cp /decent-bin/artifacts/prefix/bin/* /decent-bin
 VOLUME /root/.decent
 WORKDIR /decent-bin
-ENTRYPOINT ["sh", "-c", "/decent-bin/decentd"]
+ENTRYPOINT ["/decent-bin/decentd", "--rpc-endpoint=0.0.0.0:8090"]
